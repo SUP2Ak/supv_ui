@@ -1,0 +1,19 @@
+html {
+  color-scheme: normal !important;
+}
+
+body {
+  background: none !important;
+  overflow: hidden !important;
+  user-select: none;
+  margin: 0;
+  font-family: "Rubik", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  height: 100vh;
+}
+
+#root {
+  height: 100%;
+  background: transparent !important;
+}

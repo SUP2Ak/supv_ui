@@ -1,0 +1,154 @@
+.drawer-header {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+.drawer-controls {
+    display: flex;
+    gap: 10px;
+}
+
+.position-btn {
+    padding: 6px 12px;
+    background: #333;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.position-btn:hover {
+    background: #444;
+}
+
+.position-btn.active {
+    background: #555;
+}
+
+.position-toggle {
+    padding: 8px;
+    background: #333;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.2s ease;
+}
+
+.position-toggle:hover {
+    background: #444;
+}
+
+.position-icon {
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.position-tooltip {
+    position: absolute;
+    top: -30px;
+    background: #333;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.2s ease;
+    pointer-events: none;
+}
+
+.drawer.left .position-tooltip {
+    left: 0;
+    transform: translateX(0);
+}
+
+.drawer.right .position-tooltip {
+    left: 0;
+    transform: translateX(0);
+}
+
+.position-tooltip::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: var(--arrow-position, 50%);
+    transform: translateX(-50%);
+    border: 4px solid transparent;
+    border-top-color: #333;
+}
+
+.drawer.left .position-tooltip::after {
+    left: 75%;
+}
+
+.drawer.right .position-tooltip::after {
+    left: 25%;
+}
+
+.position-toggle:hover .position-tooltip {
+    opacity: 1;
+    visibility: visible;
+}
+
+.drawer-content {
+    padding: 20px;
+    max-height: calc(100vh - 150px);
+    /* Hauteur maximale avec défilement */
+    overflow-y: auto;
+    /* Ajoute une barre de défilement si nécessaire */
+}
+
+.drawer-content button {
+    width: 100%;
+    padding: 12px 16px;
+    margin-bottom: 8px;
+    background: #2a2a2a;
+    color: white;
+    border: 1px solid #444;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-align: left;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+}
+
+.drawer-content button:hover {
+    background: #3a3a3a;
+    border-color: #666;
+    transform: translateX(4px);
+}
+
+.drawer-content button:active {
+    background: #444;
+    transform: translateX(2px);
+}
+
+.drawer-content::-webkit-scrollbar {
+    width: 8px;
+}
+
+.drawer-content::-webkit-scrollbar-track {
+    background: #1a1a1a;
+    border-radius: 4px;
+}
+
+.drawer-content::-webkit-scrollbar-thumb {
+    background: #444;
+    border-radius: 4px;
+}
+
+.drawer-content::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
