@@ -1,4 +1,11 @@
-import onHover from "./onHover.mp3";
-import onClick from "./onClick.mp3";
+const sounds: { [key: string]: string } = {};
+const soundFiles = import.meta.glob('./*.mp3', { eager: true });
 
-export { onHover, onClick };
+Object.entries(soundFiles).forEach(([path, module]) => {
+  const name = path.split('/').pop()?.replace('.mp3', '');
+  if (name) {
+    sounds[name] = (module as { default: string }).default;
+  }
+});
+
+export default sounds;
