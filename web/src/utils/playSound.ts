@@ -5,7 +5,7 @@ export const playSound = (sound: SoundName) => {
   const soundUrl = sounds[sound];
   if (soundUrl) {
     const audio = new Audio(soundUrl);
-    audio.volume = 0.5;
+    audio.volume = .5;
     audio.play();
-  }
+  };
 };
